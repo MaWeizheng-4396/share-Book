@@ -1,0 +1,40 @@
+page-contact {
+    .slidebox {
+        height: 32%;
+    }
+    .firstDiv {
+        div {
+            width: 24%;
+            margin: 0 0.5% 1% 0.5%;
+            line-height: 26px;
+            float: left;
+            text-align: center;
+            background: lightblue;
+        }
+        div:hover {
+            background: #43a59c;
+            color: #fff;
+        }
+    }
+    .scroll-content {
+        overflow: auto;
+    }
+    .imgclass {
+        width: 24%;
+        margin: 0.5%;
+        height: 90px;
+        text-align: center;
+        float: left;
+    }
+    .selectButton{
+      margin-top: -10px;
+      line-height: 20px;
+      border-radius: 5px;
+      background: #488aff;
+      text-align: center;
+    }
+    .B{
+      display: none;
+      text-align: center;
+    }
+}

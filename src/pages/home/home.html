@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title style="text-align: center;">发布</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <div class="cssClass" *ngFor="let item of items; let i=index;" (click)="searchClick($event, i)">
+      <ion-avatar item-left>
+        <img style="width: 100%;height:70PX;" src="../../assets/imgs/{{item.img}}">
+      </ion-avatar>
+      <span style="text-align: center;">{{item.name}}</span>
+    </div>
+  </div>
+  <!-- <img id="myImage" alt="" [src]="" />
+  <button class="button" (click)="getPictureByCamera()">Use camera</button> -->
+</ion-content>

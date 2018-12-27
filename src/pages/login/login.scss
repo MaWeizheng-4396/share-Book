@@ -1,0 +1,53 @@
+page-login {
+    .toolbar-title-md {
+      text-align: center;
+    }
+    .scroll-content {
+      overflow-y: hidden !important;
+    }
+    .header-md::after, .header-ios::after {
+      background-image: none !important;
+    }
+
+    .input_left {
+      float: left;
+      width: 30%;
+      height: 4.4rem;
+      line-height: 4.4rem;
+      background-color: #2760e6;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      color: #fff;
+      font-size: 17px;
+    }
+
+    .input_left img {
+      width: 17px;
+      margin-right: 7px;
+    }
+
+    .input_right {
+      float: left;
+      width: 70%;
+      height: 4.4rem;
+      line-height: 4.4rem;
+      background-color: rgba(199, 228, 252, 0.76);
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    .input_right input {
+      border: none;
+      background: transparent;
+      width: 85%;
+    }
+
+    .alert-title {
+      text-align: center !important;
+    }
+
+    .alert-sub-title {
+      text-align: center !important;
+      margin-top: 10% !important;
+    }
+  }

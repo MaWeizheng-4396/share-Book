@@ -1,0 +1,97 @@
+page-information {
+  // 滚动条
+    .scrollClass>div:nth-child(2) {
+        overflow: auto !important;
+    }
+    .informationWordCLass {
+        width: 55%;
+        height: auto;
+        margin-left: 5%;
+        p {
+            line-height: 24px;
+        }
+    }
+    // 底部按钮
+    .bottonClass {
+        text-align: center;
+        margin: 70px 18% 0;
+        display: flex;
+        bottom: 10%;
+        a {
+            width: 80px;
+            background: #488aff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 13px;
+            margin: 0 5px 0 5px;
+            line-height: 26px;
+            font-size: 17px;
+        }
+        // .button{
+        //   width: 100px;
+        //   background: #488aff;
+        //   color: #fff;
+        //   text-decoration: none;
+        //   border-radius: 13px;
+        //   margin: 0 5px 0 5px;
+        //   line-height: 26px;
+        //   font-size: 17px;
+        // }
+    }
+    // 富文本编辑器
+    .editorClass {
+        margin-top: 2%;
+        .ql-toolbar.ql-snow>span:nth-child(2),
+        .ql-toolbar.ql-snow>span:nth-child(3),
+        .ql-toolbar.ql-snow>span:nth-child(4),
+        .ql-toolbar.ql-snow>span:nth-child(5),
+        .ql-toolbar.ql-snow>span:nth-child(6),
+        .ql-toolbar.ql-snow>span:nth-child(7),
+        .ql-toolbar.ql-snow>span:nth-child(8),
+        .ql-toolbar.ql-snow>span:nth-child(9),
+        .ql-toolbar.ql-snow>span:nth-child(10),
+        .ql-toolbar.ql-snow>span:nth-child(11),
+        .ql-toolbar.ql-snow>span:nth-child(12),
+        .ql-toolbar.ql-snow>span:nth-child(13),
+        .ql-toolbar.ql-snow>span:nth-child(14),
+            {
+            display: none !important;
+        }
+    }
+    // 回复按钮
+    .commentClass {
+        color: #fff;
+        margin-top: 5%;
+        width: 12%;
+        text-align: center;
+        background: #488aff;
+    }
+    .commentClass2 {
+        margin-left: 64%;
+        margin-right: 2%;
+        color: #488aff;
+    }
+    //取消回复按钮
+    .commentClass3 {
+        color: #488aff;
+    }
+    // 评论
+    .commentClass1 {
+        margin-top: 2%;
+        &span:nth-child(1):hover {
+            color: #488aff;
+        }
+    }
+    .A {
+        display: none;
+    }
+    .B {
+        display: none;
+    }
+    .replYClass {
+        text-align: right;
+        margin-right: 5%;
+        color: #488aff;
+        margin-bottom: 2%;
+    }
+}

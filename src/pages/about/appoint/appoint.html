@@ -1,0 +1,30 @@
+<!--
+  Generated template for the AppointPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>appoint</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div [ngClass]="{'B': !appointData}">
+    <h3>当前没有预约</h3>
+  </div>
+  <div [ngClass]="{'B': appointData}">
+    <h3 style="margin-left: 2%;">您预约了:</h3>
+    <div *ngFor="let item of downLoadData; let i =index">
+      <ion-avatar item-left>
+        <p>{{item.itemsname}}:</p>
+        <img (click)="downSelectClick(i)" style="width: 100%;height:170PX;" src="../../assets/imgs/{{item.imgname}}.jpg">
+        <p>到期日期为：{{item.returntime}}，还剩:{{item.remainingtime}}天</p>
+      </ion-avatar>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{imgData.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2 style="text-align: center;">上传资源</h2>
+  <form class="am-form tpl-form-line-form" id="tf" onsubmit="return false" enctype="multipart/form-data">
+    <ion-item class="label_red" style="display: none">
+      <ion-label>username</ion-label>
+      <ion-input id="username" type="text" placeholder="*" name="aaa" [(ngModel)]="username"></ion-input>
+    </ion-item>
+    <ion-item class="label_red" style="display: none">
+      <ion-label>spenumber</ion-label>
+      <ion-input id="spenumber" type="text" placeholder="*" name="a" [(ngModel)]="spenumber"></ion-input>
+    </ion-item>
+    <ion-item class="label_red">
+      <ion-label>请输入名字</ion-label>
+      <ion-input id="nameId" type="text" placeholder="*" name="aa" [(ngModel)]="nameData"></ion-input>
+    </ion-item>
+    <div style="margin-left: 6%;color: #9f9f9f;font-size: 16px;">
+      <ion-label>请输入简介</ion-label>
+      <textarea style="width: 100%;color: #000;" id="statusId" type="text" placeholder="*" name="qq" [(ngModel)]="statusData"></textarea>
+    </div>
+    <input id="docfile" class="fileClass" type="file" name="courseFile" multiple="multiple" />
+    <input class="inputButton" ion-button block round type="button" class="btn btn-default" value="上传" (click)="upload()" />
+  </form>
+</ion-content>

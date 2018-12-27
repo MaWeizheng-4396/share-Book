@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title style="text-align: center;">
+      首页
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides class="slidebox" [pager]="true" [loop]="true" autoplay="2000" speed="800" *ngIf="len >=1">
+    <ion-slide *ngFor="let item of imageUrl; let i=index" (click)="imgClick($event, i)">
+      <img style="width: 100%;height: 200px;" src="../../assets/imgs/{{item}}.jpg " />
+    </ion-slide>
+  </ion-slides>
+  <hr>
+  <div class="firstDiv">
+    <div *ngFor="let item of buttonWord; let i =index" (click)="divOnClick($event, i)">{{item}}</div>
+  </div>
+  <hr>
+  <div class="messageDiv">
+    <ion-card>
+      <ion-card-header>
+        公告栏
+      </ion-card-header>
+      <ion-card-content>
+        这是公告栏，展示此app的公告。
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <hr>
+  <div class="list">
+
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="请输入查询内容" [(ngModel)]="selectWord" style="border-radius: 9px !important;">
+      </label>
+      <button class="button button-small selectButton" (click)="selectClick($event)">
+        查询
+      </button>
+    </div>
+
+  </div>
+  <hr>
+  <h3 style="margin-left: 3%;">热门内容</h3>
+  <div class="selectDiv">
+    <div [ngClass]="{'B':!selectData}">抱歉，当前搜索无结果，请更换条件重新查询</div>
+    <div class="imgclass" *ngFor="let item of items; let i=index;" (click)="searchClick($event, i)">
+      <ion-avatar item-left>
+        <img style="width: 100%;height:70PX;" src="../../assets/imgs/{{item.imgname}}">
+      </ion-avatar>
+      <span style="text-align: center;">{{item.name}}</span>
+    </div>
+  </div>
+</ion-content>

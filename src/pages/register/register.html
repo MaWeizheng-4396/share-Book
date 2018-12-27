@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      注册
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="outer-content" style="background: #fff;">
+  <div class="hidden_head"></div>
+  <ion-list style="padding: 0 5% 0 2%;margin-bottom: 0px;" [ngClass]="{'CC': imgClass}">
+    <ion-item class="label_red">
+      <ion-label>请输入用户名</ion-label>
+      <ion-input type="text" placeholder="*" onblur="if(this.value.replace(/^ +| +$/g,'')=='')alert('不能为空!')" [(ngModel)]="usersname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>请输入密码</ion-label>
+      <ion-input type="password" placeholder="6-16位,必须包含数字,字母" (change)="pssswdChange()" [(ngModel)]="userspwd"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>请确认密码</ion-label>
+      <ion-input type="password" placeholder="*" [(ngModel)]="userspwd1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>请输入学号</ion-label>
+      <ion-input type="text" placeholder="*" [(ngModel)]="usersStudentId"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>请输入邮箱</ion-label>
+      <ion-input type="text" placeholder="*" (change)="emailChange()" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>请输入手机号</ion-label>
+      <ion-input type="text" placeholder="*" (change)="telChange()" [(ngModel)]="tel"></ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label>请输入验证码</ion-label>
+      <ion-input type="text" class="flag"></ion-input>
+    </ion-item>
+    <button ion-button outline style="height: 35px;float: right; right: 4px;top: -43px;">发送验证码</button> -->
+  </ion-list>
+
+  <div style="text-align: center;position: absolute; margin: 20px 30px;width: 82%;">
+    <button  [ngClass]="{'CC': imgClass}" ion-button block round (click)="registClick()">立即注册</button>
+      <div class="divClass">
+        <span [ngClass]="{'CC': imgClass}">点击二维码，使用微信注册</span>
+        <span [ngClass]="{'CC': !imgClass}">请扫描二维码,或者点击二维码返回</span>
+        <img (click)="imgClick()" [ngClass]="{'AA':!imgClass, 'BB': imgClass}" src="../../assets/imgs/erweima.jpg" />
+      </div>
+  </div>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>用户信息</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding >
+  <ion-list style="padding: 0 5% 0 2%;">
+    <ion-item class="inputClass">
+      <ion-label>姓名</ion-label>
+      <ion-input type="text" readonly="true" placeholder="{{ownSelect.username}}" [(ngModel)]="ownSelect.username"></ion-input>
+    </ion-item>
+    <ion-item class="inputClass">
+      <ion-label>学号</ion-label>
+      <ion-input type="text" readonly="true" placeholder="{{ownSelect.usersStudentId}}" [(ngModel)]="ownSelect.usersStudentId"></ion-input>
+    </ion-item>
+    <ion-item class="inputClass1">
+      <ion-label>电话</ion-label>
+      <ion-input type="text" readonly="{{readonlyOn}}" placeholder="{{ownSelect.users_tel}}" [(ngModel)]="ownSelect.users_tel"></ion-input>
+    </ion-item>
+    <ion-item class="inputClass1">
+      <ion-label>邮箱</ion-label>
+      <ion-input type="text" readonly="{{readonlyOn}}" placeholder="{{ownSelect.users_email}}" [(ngModel)]="ownSelect.users_email"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div style="text-align: center; margin: 70px 18% 0;">
+    <button ion-button block round [ngClass]="{'A':!isSelected, 'C':userSelect}" (click)="updataClick($event)">
+      修改信息
+    </button>
+    <button ion-button block round [ngClass]="{'B':isSelected}" (click)="updata1Click($event)">
+      保存信息
+    </button>
+  </div>
+</ion-content>

@@ -1,0 +1,73 @@
+page-cnm {
+    .photo {
+        width: 100%;
+        min-height: 99px;
+        border-radius: 4px; // border: 1px solid red;
+        a {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px; // border: 1px solid black;
+        }
+        input[type="file"] {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100px;
+            border-radius: 10px;
+            border: 1px solid blue;
+            opacity: 0;
+            z-index: 2;
+        }
+        img {
+            display: block;
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            z-index: 1;
+            border: none;
+        }
+    }
+    .photo1 {
+        margin-top: 100px;
+    }
+    .inpitButon{
+      background: #00adff;
+      border-radius: 10px;
+      width: 50%;
+      margin-left: 24%;
+    }
+    .preview-label {
+      width: 100px;
+      height:100px;
+      border:1px dotted #ccc;
+      position: relative;
+      vertical-align: top;
+      display: inline-block
+    }
+    .preview-label>input {
+      display: none;
+    }
+    .preview-label .uploadimgicon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .preview-label .uploadimgremove {
+      position: absolute;
+      top:5px;
+      right:5px;
+    }
+    .fileClass{
+      overflow: hidden;
+      margin-left: 15px;
+      border: none;
+      font-size: 1.4rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #fff;
+      background-color: #488aff;
+    }
+}

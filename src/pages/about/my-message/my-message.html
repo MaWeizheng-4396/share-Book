@@ -1,0 +1,93 @@
+<!--
+  Generated template for the MyMessagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>myMessage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div [ngClass]="{'A':!isSelected}">
+    <p>预约消息:</p>
+    <div *ngFor="let item of returnMessage; let i = index">
+      <p>
+        <span>{{item.appointuname}}</span>预约了您的:</p>
+      <ion-avatar item-left>
+        <img (click)="commentsClick(i)" style="width: 100%;height:170PX;" src="../../assets/imgs/{{item.imgname}}">
+      </ion-avatar>
+      <div style="text-align: center;margin: 20px 18% 0;display: flex;">
+        <button ion-button block round [ngClass]="{'B':returnData[i]}" (click)="returnInMessage(i)">
+          同意
+        </button>
+        <button ion-button block round [ngClass]="{'B':returnData[i]}" (click)="returnOnMessage(i)">
+          拒绝
+        </button>
+      </div>
+    </div>
+    <div *ngFor="let item of determine">
+      <p>您同意了
+        <span>{{item.appointuname}}</span>的预约</p>
+    </div>
+  </div>
+  <div [ngClass]="{'A':isSelected}">
+    <p>当前没有预约消息</p>
+  </div>
+  <hr>
+  <div [ngClass]="{'C':appointSelect}">
+    <p>没有预约的物品</p>
+  </div>
+  <div [ngClass]="{'C':!appointSelect}">
+    <div [ngClass]="{'C':!appointSelect1}" *ngFor="let item of deterMessage;let i = index;">
+      <p>
+        <span>{{item.username}}</span>拒绝了您的预约</p>
+      <ion-avatar item-left>
+        <img (click)="commentsClick()" style="width: 100%;height:170PX;" src="../../assets/imgs/{{item.imgname}}">
+      </ion-avatar>
+    </div>
+    <div [ngClass]="{'C':!appointSelect2}" *ngFor="let item of deterMessage2">
+      <p>
+        <span>{{item.usersname}}</span>同意了您的预约</p>
+      <ion-avatar item-left>
+        <img (click)="commentsClick()" style="width: 100%;height:170PX;" src="../../assets/imgs/{{item.imgname}}">
+      </ion-avatar>
+    </div>
+    <div [ngClass]="{'C':!appointSelect3}" *ngFor="let item of deterMessage1">
+      <p>
+        <span>{{item.usersname}}</span>对您的预约没有回应</p>
+      <ion-avatar item-left>
+        <img (click)="commentsClick()" style="width: 100%;height:170PX;" src="../../assets/imgs/{{item.imgname}}">
+      </ion-avatar>
+    </div>
+    <div [ngClass]= "{'A':!deterDataSelect}">
+        <div *ngFor="let item of returnMessage1; let i = index">
+            <p>
+              <span>{{item.appointuname}}</span>归还您的:</p>
+            <ion-avatar item-left>
+              <img (click)="commentsClick()" style="width: 100%;height:170PX;" src="../../assets/imgs/{{item.imgname}}">
+            </ion-avatar>
+            <div style="text-align: center;margin: 20px 18% 0;display: flex;">
+              <button ion-button block round [ngClass]="{'B':returnData[i]}" (click)="deterReturn(i)">
+                同意
+              </button>
+            </div>
+          </div>
+    </div>
+  </div>
+  <hr>
+  <div [ngClass]="{'A':!selectData}">
+    <p>有人评论了你的:</p>
+    <ion-avatar item-left>
+      <img (click)="commentsClick()" style="width: 100%;height:170PX;" src="../../assets/imgs/{{imgData1}}">
+    </ion-avatar>
+  </div>
+  <div [ngClass]="{'A':selectData}">
+    <p>当前没有评论</p>
+  </div>
+</ion-content>

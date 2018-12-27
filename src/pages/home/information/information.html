@@ -1,0 +1,67 @@
+<!--
+  Generated template for the InformationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>数据信息界面</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="scrollClass">
+  <div style="display: flex;">
+    <div style="width: 40%">
+      <ion-avatar item-center>
+        <img style="width: 100%;height:auto;" src="../../assets/imgs/{{selectData.imgname}}">
+      </ion-avatar>
+    </div>
+    <div class="informationWordCLass">
+      <h2>{{selectData.itemsname}}</h2>
+      <p>学号：{{selectData.usersStudentId}}</p>
+      <p>上架日期：{{selectData.itemsdowntime}}</p>
+    </div>
+  </div>
+
+  <hr>
+  <div class="messageDiv">
+    <span style="word-break: break-all;">
+      <strong>摘要：</strong>{{selectData.itemsintroduction}}</span>
+  </div>
+  <hr>
+  <p style="text-align: left;" [ngClass]="{'A':!isSelected}">当前评论：</p>
+  <div class="commentClass1" *ngFor="let item of comments;let i = index">
+    <span (click)="usersnameClick(i)">
+      <strong>{{item.usersname}}</strong>:</span>
+    <span>{{item.com_status}}</span>
+    <div>
+      <div [ngClass]="{'B': !replyWord[i]}">回复：</div>
+      <span style="margin-left: 12%">
+        <strong>{{item.rep_usersname}}</strong>
+      </span>
+      <span>{{item.replyStatus}}</span>
+    </div>
+    <div class="replyClass" style="text-align:right;margin-left: 84%;color: #488aff;width: 12%;" [ngClass]="{'A':!isSelected, 'B':replyData1[i]}"
+      (click)="replyClick(i)">回复</div>
+    <div id="{{item.id}}" class="editorClass"  [ngClass]="{'B':!replyData[i]}">
+      <quill-editor v-model="content" data-placeholder="请输入回复" [(ngModel)]="editorContent1"> </quill-editor>
+      <div style="display: flex;">
+        <div class="commentClass2" (click)="rewReplyClick($event, editorContent1 ,i)">回复</div>
+        <div class="commentClass3" (click)="upReplyClick(i)">取消回复</div>
+      </div>
+    </div>
+  </div>
+  <div class="editorClass">
+    <quill-editor v-model="content" data-placeholder="请输入评论" (change)="editorChange()" [(ngModel)]="editorContent"> </quill-editor>
+    <div class="commentClass" (click)="commentsClick($event, editorContent)">评论</div>
+  </div>
+  <div class="bottonClass">
+    <a [ngClass]="{'B':appointData}" (click)="appointmentMessage()">预约</a>
+    <a [ngClass]="{'B':!appointData,'C': !selectReturn}" (click)="returnClick()">归还</a>
+    <a href="tel:{{selectData.users_tel}}"> 电话咨询 </a>
+  </div>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title style="text-align: center;">我的</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="overflowClass">
+  <ion-list class="top-list">
+    <button ion-item (click)="pushMorePage()">
+      <ion-avatar item-left>
+        <img src="../../assets/imgs/ionic.jpg">
+      </ion-avatar>
+      <h2>devilx</h2>
+      <p>学号：18600001111</p>
+    </button>
+  </ion-list>
+
+  <ion-list>
+    <button ion-item (click)="myMessagePage()">
+      我的消息
+    </button>
+    <button ion-item [navPush]="DownloadPage">
+      我上架的
+    </button>
+    <!-- <button ion-item [navPush]="AppointPage">
+      我的预约
+    </button> -->
+  </ion-list>
+
+  <ion-list>
+    <button ion-item [navPush]="MyVersionPage">
+      版本号
+      <span item-end>V1.0</span>
+    </button>
+    <button ion-item [navPush]="appAbout">
+      关于
+    </button>
+  </ion-list>
+
+  <div style="text-align: center; margin-left: 30px; margin-right: 30px;margin-top: 30px;">
+    <button ion-button block (click)="logOut()">
+      退出登录
+    </button>
+  </div>
+</ion-content>
